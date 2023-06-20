@@ -22,30 +22,28 @@ const SelectCompany = ({ checkedList, setCheckedList, companies_list }) => {
   };
 
   return (
-    <div className="w-[350px] h-[600px] bg-white shadow-lg rounded-lg justify-center items-center">
+    <div className="w-[350px] h-[600px] bg-white shadow-lg rounded-lg justify-between  items-center p-0">
       <>
         <Checkbox
-        
           indeterminate={indeterminate}
           onChange={onCheckAllChange}
           checked={checkAll}
-          className="text-xl border-b-[1px] p-1 ml-4"
+          className="text-xl border-b-[1px]"
         >
           Selected Companies
         </Checkbox>
 
         <CheckboxGroup
-          className="flex flex-col justify-center text-center mt-2 ml-5"
           options={companies_list.map((option) => ({
             label: (
-              <span className="flex justify-center items-center text-xl mt-2">
+              <div className="w-[180px] flex flex-row text-center items-center ">
                 <img
                   src={option.image}
                   alt={option.label}
-                  style={{ marginRight: "8px", width: "40px", height: "20px" }}
+                  className="mt-2 w-20 h-10"
                 />
-                {option.label}
-              </span>
+                <span className="ml-2 text-lg">{option.label}</span>
+              </div>
             ),
             value: option.value,
           }))}
