@@ -6,29 +6,36 @@ const CheckboxGroup = Checkbox.Group;
 const SelectCompany = ({ checkedList, setCheckedList, companies_list }) => {
   const [indeterminate, setIndeterminate] = useState(true);
   const [checkAll, setCheckAll] = useState(false);
-
+  // For s single select---
   const onChange = (list) => {
-    setCheckedList(list);
+    const selectedObjects = list.map((value) =>
+      companies_list.find((option) => option.value === value)
+    );
+    setCheckedList(selectedObjects);
     setIndeterminate(!!list.length && list.length < companies_list.length);
     setCheckAll(list.length === companies_list.length);
   };
-
+  // for allSelect in  a single click----
   const onCheckAllChange = (e) => {
-    setCheckedList(
-      e.target.checked ? companies_list.map((option) => option.value) : []
+    const selectedValues = e.target.checked
+      ? companies_list.map((option) => option.value)
+      : [];
+    const selectedObjects = selectedValues.map((value) =>
+      companies_list.find((option) => option.value === value)
     );
+    setCheckedList(selectedObjects);
     setIndeterminate(false);
     setCheckAll(e.target.checked);
   };
 
   return (
-    <div className="w-[350px] h-[600px] bg-white shadow-lg rounded-lg justify-between  items-center p-0">
+    <div className="w-[400px] h-[700px] bg-white shadow-xl rounded-xl justify-between  items-center p-2">
       <>
         <Checkbox
           indeterminate={indeterminate}
           onChange={onCheckAllChange}
           checked={checkAll}
-          className="text-xl border-b-[1px]"
+          className="text-xl border-b-[2px]"
         >
           Selected Companies
         </Checkbox>
@@ -47,7 +54,7 @@ const SelectCompany = ({ checkedList, setCheckedList, companies_list }) => {
             ),
             value: option.value,
           }))}
-          value={checkedList}
+          value={checkedList.map((item) => item.value)}
           onChange={onChange}
         />
       </>

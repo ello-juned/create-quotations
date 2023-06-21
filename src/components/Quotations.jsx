@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { InputNumber, Select } from "antd";
-import { FileOutlined } from "@ant-design/icons";
+import { FileTwoTone } from "@ant-design/icons";
 
 const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
   const [listCoverage, setListCoverage] = useState([]);
-
+  // console.log("checkedList", checkedList);
   const handleChange = (value, index) => {
     const updatedListCoverage = [...listCoverage];
     updatedListCoverage[index] = value;
@@ -40,7 +40,7 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
   };
 
   return (
-    <div className="flex flex-col w-full h-full min-h-[400px] bg-white  shadow-lg rounded-lg p-4">
+    <div className="flex flex-col w-full h-full min-h-[400px] bg-white  shadow-xl rounded-lg p-4">
       {/* HEADER */}
       <div className="flex flex-row items-center justify-between border-b-[1px]">
         <div className="w-[20%]">
@@ -52,8 +52,8 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
           </div>
         </div>
         <div>
-          <button className="bg-green-300 p-2 flex flex-row justify-center items-center font-light  text-white rounded-md">
-            PREVIEW <FileOutlined className="text-xl ml-2" />
+          <button className="bg-green-300 p-2 flex flex-row justify-center items-center text-center tracking-wider font-light  text-white rounded-md hover:bg-gray-600">
+            PREVIEW <FileTwoTone className="text-2xl ml-2" />
           </button>
         </div>
       </div>
@@ -62,14 +62,19 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
         return (
           <div className="border-[1px] mt-4 p-4 rounded-lg" key={index}>
             <div className="flex flex-row  items-center justify-between mt-5">
-              <div className="flex flex-row">
-                <p>Image</p>
-                <h2 className="ml-2">{entry_value}</h2>
+              <div className="flex flex-row justify-center items-center">
+                <img
+                  src={entry_value?.image}
+                  alt={entry_value?.label}
+                  height={60}
+                  width={60}
+                />
+                <h2 className="ml-5">{entry_value?.value}</h2>
               </div>
               <div>
                 <button
                   onClick={handleCalculatePremium}
-                  className="bg-blue-400 rounded-full p-2 text-white  font-light hover:bg-green-300 hover:text-black"
+                  className="bg-sky-400 rounded-full p-3 tracking-wide text-white  font-light hover:bg-green-300 hover:text-black"
                 >
                   Calculate Premium
                 </button>
@@ -95,7 +100,7 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
                 mode="multiple"
                 allowClear
                 className="ml-5 w-[85%] "
-                placeholder="Please select"
+                placeholder="Select Coverage"
                 onChange={(value) => handleChange(value, index)}
                 options={options}
               />
@@ -112,7 +117,7 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
                   className="flex flex-row justify-between ml-0 m-2 mt-3 w-[400px] "
                   key={subIndex}
                 >
-                  <h3>{entry_} : </h3>
+                  <h3>{entry_} :</h3>
                   <InputNumber
                     id={`${entry_value}-${entry_}-${subIndex}`}
                     prefix="₹"

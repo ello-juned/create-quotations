@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .ant-checkbox-wrapper {
-  @apply w-full flex flex-row-reverse justify-between items-center p-2;
+  @apply w-full flex flex-row-reverse justify-between items-center  p-2;
 }
 
 .ant-checkbox {
-  @apply h-10 w-10 justify-center text-center  items-center m-auto bg-yellow-400 !p-0 !rounded-xl;
+  @apply h-6 w-6 justify-center text-center  items-center m-auto !p-0 !rounded-xl;
 }
 .ant-checkbox-checked {
   @apply bg-green-300 p-2;
@@ -16,5 +16,5 @@
   @apply !opacity-100;
 }
 .ant-checkbox-inner {
-  @apply !h-4 !w-4  m-auto;
+  @apply   m-auto;
 }
