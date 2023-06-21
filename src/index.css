@@ -7,7 +7,7 @@
 }
 
 .ant-checkbox {
-  @apply h-6 w-6 justify-center text-center  items-center m-auto !p-0 !rounded-xl;
+  @apply h-8 w-8 justify-center text-center  items-center m-auto !p-0 !rounded-xl;
 }
 .ant-checkbox-checked {
   @apply bg-green-300 p-2;
@@ -16,5 +16,10 @@
   @apply !opacity-100;
 }
 .ant-checkbox-inner {
-  @apply   m-auto;
+  @apply !h-4 !w-4  m-auto;
+}
+
+
+.ant-checkbox-checked::after {
+  @apply bg-green-300 p-2 border-transparent animate-none;
 }

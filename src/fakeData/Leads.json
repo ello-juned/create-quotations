@@ -1,0 +1,231 @@
+[
+  {
+    "Basic Information": {
+      "Insurance Category": "John Doe",
+      "Product Type": "2 Wheeler",
+      "Primary Email Address": "johndoe@example.com",
+      "Contact Number": "1234567890",
+      "Presently Insured": "Yes"
+    },
+    "Insured Information": [
+      {
+        "Brand": "Toyota",
+        "Model": "Camry",
+        "Variant": "Petrol",
+        "Vehicle": "Old",
+        "RTO City": "Punjab",
+        "Fuel Type": "Petrol",
+        "RTO Venue": "",
+        "Regn Number": "",
+        "Manufacture Year": "2022"
+      }
+    ],
+    "Remarks": { "Remark": "I like the product." }
+  },
+  {
+    "Basic Information": {
+      "Insurance Category": "Jane Smith",
+      "Product Type": "4 Wheeler",
+      "Primary Email Address": "janesmith@example.com",
+      "Contact Number": "9876543210",
+      "Presently Insured": "No"
+    },
+    "Insured Information": [
+      {
+        "Brand": "Honda",
+        "Model": "Civic",
+        "Variant": "Diesel",
+        "Vehicle": "New",
+        "RTO City": "Delhi",
+        "Fuel Type": "Diesel",
+        "RTO Venue": "Delhi",
+        "Regn Number": "DL456789",
+        "Manufacture Year": "2021"
+      }
+    ],
+    "Remarks": { "Remark": "Great customer service!" }
+  },
+  {
+    "Basic Information": {
+      "Insurance Category": "Robert Johnson",
+      "Product Type": "2 Wheeler",
+      "Primary Email Address": "robertjohnson@example.com",
+      "Contact Number": "5678901234",
+      "Presently Insured": "Yes"
+    },
+    "Insured Information": [
+      {
+        "Brand": "Kawasaki",
+        "Model": "Ninja",
+        "Variant": "Sports",
+        "Vehicle": "Old",
+        "RTO City": "Mumbai",
+        "Fuel Type": "Petrol",
+        "RTO Venue": "Mumbai",
+        "Regn Number": "MH789012",
+        "Manufacture Year": "2019"
+      }
+    ]
+    },
+  {
+    "Basic Information": {
+      "Insurance Category": "Emily Williams",
+      "Product Type": "4 Wheeler",
+      "Primary Email Address": "emilywilliams@example.com",
+      "Contact Number": "0123456789",
+      "Presently Insured": "No"
+    },
+    "Insured Information": [
+      {
+        "Brand": "Ford",
+        "Model": "Mustang",
+        "Variant": "Petrol",
+        "Vehicle": "New",
+        "RTO City": "Bangalore",
+        "Fuel Type": "Petrol",
+        "RTO Venue": "Bangalore",
+        "Regn Number": "KA123456",
+        "Manufacture Year": "2020"
+      }
+    ],
+    "Remarks": { "Remark": "Highly recommended!" }
+  },
+  {
+    "Basic Information": {
+      "Insurance Category": "Michael Davis",
+      "Product Type": "2 Wheeler",
+      "Primary Email Address": "michaeldavis@example.com",
+      "Contact Number": "9876543210",
+      "Presently Insured": "Yes"
+    },
+    "Insured Information": [
+      {
+        "Brand": "Suzuki",
+        "Model": "Hayabusa",
+        "Variant": "Sports",
+        "Vehicle": "Old",
+        "RTO City": "Chennai",
+        "Fuel Type": "Petrol",
+        "RTO Venue": "Chennai",
+        "Regn Number": "TN456789",
+        "Manufacture Year": "2018"
+      }
+    ],
+    "Remarks": { "Remark": "Excellent coverage!" }
+  },
+  {
+    "Basic Information": {
+      "Insurance Category": "Sarah Johnson",
+      "Product Type": "4 Wheeler",
+      "Primary Email Address": "sarahjohnson@example.com",
+      "Contact Number": "4567890123",
+      "Presently Insured": "Yes"
+    },
+    "Insured Information": [
+      {
+        "Brand": "Chevrolet",
+        "Model": "Cruze",
+        "Variant": "Diesel",
+        "Vehicle": "New",
+        "RTO City": "Kolkata",
+        "Fuel Type": "Diesel",
+        "RTO Venue": "Kolkata",
+        "Regn Number": "WB789012",
+        "Manufacture Year": "2021"
+      }
+    ],
+    "Remarks": { "Remark": "Quick claim settlement!" }
+  },
+  {
+    "Basic Information": {
+      "Insurance Category": "David Anderson",
+      "Product Type": "2 Wheeler",
+      "Primary Email Address": "davidanderson@example.com",
+      "Contact Number": "2345678901",
+      "Presently Insured": "No"
+    },
+    "Insured Information": [
+      {
+        "Brand": "Harley-Davidson",
+        "Model": "Street 750",
+        "Variant": "Cruiser",
+        "Vehicle": "Old",
+        "RTO City": "Hyderabad",
+        "Fuel Type": "Petrol",
+        "RTO Venue": "Hyderabad",
+        "Regn Number": "AP567890",
+        "Manufacture Year": "2017"
+      }
+    ],
+    "Remarks": { "Remark": "Great value for money!" }
+  },
+  {
+    "Basic Information": {
+      "Insurance Category": "Linda Wilson",
+      "Product Type": "4 Wheeler",
+      "Primary Email Address": "lindawilson@example.com",
+      "Contact Number": "6789012345",
+      "Presently Insured": "Yes"
+    },
+    "Insured Information": [
+      {
+        "Brand": "Volkswagen",
+        "Model": "Golf",
+        "Variant": "Petrol",
+        "Vehicle": "New",
+        "RTO City": "Pune",
+        "Fuel Type": "Petrol",
+        "RTO Venue": "Pune",
+        "Regn Number": "MH123456",
+        "Manufacture Year": "2023"
+      }
+    ],
+    "Remarks": { "Remark": "Responsive customer support!" }
+  },
+  {
+    "Basic Information": {
+      "Insurance Category": "Daniel Brown",
+      "Product Type": "2 Wheeler",
+      "Primary Email Address": "danielbrown@example.com",
+      "Contact Number": "7890123456",
+      "Presently Insured": "No"
+    },
+    "Insured Information": [
+      {
+        "Brand": "Yamaha",
+        "Model": "FZ",
+        "Variant": "Sports",
+        "Vehicle": "Old",
+        "RTO City": "Ahmedabad",
+        "Fuel Type": "Petrol",
+        "RTO Venue": "Ahmedabad",
+        "Regn Number": "GJ012345",
+        "Manufacture Year": "2016"
+      }
+    ],
+    "Remarks": { "Remark": "Smooth renewal process!" }
+  },
+  {
+    "Basic Information": {
+      "Insurance Category": "Jennifer Thompson",
+      "Product Type": "4 Wheeler",
+      "Primary Email Address": "jenniferthompson@example.com",
+      "Contact Number": "8901234567",
+      "Presently Insured": "Yes"
+    },
+    "Insured Information": [
+      {
+        "Brand": "Mercedes-Benz",
+        "Model": "C-Class",
+        "Variant": "Petrol",
+        "Vehicle": "New",
+        "RTO City": "Jaipur",
+        "Fuel Type": "Petrol",
+        "RTO Venue": "Jaipur",
+        "Regn Number": "RJ345678",
+        "Manufacture Year": "2023"
+      }
+    ],
+    "Remarks": { "Remark": "Efficient claims processing!" }
+  }
+]

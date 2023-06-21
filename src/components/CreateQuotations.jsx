@@ -1,0 +1,34 @@
+import React from "react";
+import SelectCompany from "./SelectCompany";
+import Quotations from "./Quotations";
+
+import LeadDetailsHeader from "./LeadDetailsHeader";
+const CreateQuotations = ({
+  checkedList,
+  setCheckedList,
+  companies_list,
+  options,
+  inputFields,
+}) => {
+  return (
+    <div className=" flex flex-col gap-4 w-full h-full p-8">
+      <LeadDetailsHeader />
+
+      <div className="flex flex-row p-10 gap-5">
+        <SelectCompany
+          checkedList={checkedList}
+          setCheckedList={setCheckedList}
+          companies_list={companies_list}
+        />
+        <Quotations
+          options={options}
+          inputFields={inputFields}
+          checkedList={checkedList}
+          setCheckedList={setCheckedList}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default CreateQuotations;

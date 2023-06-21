@@ -48,6 +48,8 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
           {/*   FOR LATER USE--- */}
           <div className="flex flex-row mb-1 mt-2">
             <button>Online</button>
+
+            
             <button className="ml-5">Offline</button>
           </div>
         </div>
@@ -74,7 +76,7 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
               <div>
                 <button
                   onClick={handleCalculatePremium}
-                  className="bg-sky-400 rounded-full p-3 tracking-wide text-white  font-light hover:bg-green-300 hover:text-black"
+                  className="bg-black rounded-full p-3 tracking-wide text-white  font-light hover:bg-green-300 hover:text-black"
                 >
                   Calculate Premium
                 </button>
@@ -132,3 +134,38 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
 };
 
 export default Quotations;
+
+
+
+
+
+// .ant-checkbox-checked:after {
+//   @apply bg-green-300 p-2 border-transparent animate-none;
+// }
+
+
+// {
+//   "Basic Information": {
+//     "Insurance Category": "John Doe",
+//     "Product Type": "2 Wheeler",
+//     "Insurance Category": "John Doe",
+
+//     "Primary Email Address": "johndoe@example.com",
+//     "Contact Number": "1234567890"
+//     "Presently Insured": "Yes"
+
+//   },
+//   "Insured Information": [
+//     {
+//       "Barnd": "Toyota",
+//       "Model": "Camry",
+//       "Variant": "Petrol",
+//       "Vehicle": "Private",
+//       "Fuel Type": "Petrol",
+//       "Vehicle": "Old",
+//       "Regn No": "Pb659099",
+//       "Manufacture Year": "2022"
+//     }
+//   ],
+//   "Remarks": {"Remark":"I like the product."}
+// }

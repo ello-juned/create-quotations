@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { Checkbox } from "antd";
+import { ArrowRightOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const CheckboxGroup = Checkbox.Group;
 
-const SelectCompany = ({ checkedList, setCheckedList, companies_list }) => {
+const ProceedLeadInfo = ({ checkedList, setCheckedList, companies_list }) => {
   const [indeterminate, setIndeterminate] = useState(true);
   const [checkAll, setCheckAll] = useState(false);
+  const navigate = useNavigate();
   // For s single select---
   const onChange = (list) => {
     const selectedObjects = list.map((value) =>
@@ -15,31 +18,28 @@ const SelectCompany = ({ checkedList, setCheckedList, companies_list }) => {
     setIndeterminate(!!list.length && list.length < companies_list.length);
     setCheckAll(list.length === companies_list.length);
   };
-  // for allSelect in  a single click----
-  const onCheckAllChange = (e) => {
-    const selectedValues = e.target.checked
-      ? companies_list.map((option) => option.value)
-      : [];
-    const selectedObjects = selectedValues.map((value) =>
-      companies_list.find((option) => option.value === value)
-    );
-    setCheckedList(selectedObjects);
-    setIndeterminate(false);
-    setCheckAll(e.target.checked);
-  };
-
   return (
-    <div className="w-[400px] min-h-[500px] h-full bg-white shadow-xl rounded-xl justify-between  items-center p-2">
-      <>
-        <Checkbox
-          indeterminate={indeterminate}
-          onChange={onCheckAllChange}
-          checked={checkAll}
-          className="text-xl border-b-[2px]"
-        >
-          Selected Companies
-        </Checkbox>
+    <div className="flex flex-col h-full w-[700px] min-h-[500px] bg-white  shadow-xl rounded-lg p-4">
+      <div className="flex flex-row items-center justify-between border-b-[1px]">
+        <div className="">
+          <h2 className="text-xl tracking-wide">Create Quotation</h2>
+          {/*   FOR LATER USE--- */}
+          <div className="flex flex-row mb-1 mt-2">
+            <button>Online</button>
 
+            <button className="ml-5">Offline</button>
+          </div>
+        </div>
+        <div>
+          <button
+            onClick={() => navigate("/CreateQuotation")}
+            className="bg-black p-2 flex flex-row justify-center items-center text-center tracking-wider font-light  text-white rounded-md hover:bg-gray-600"
+          >
+            PROCEED <ArrowRightOutlined className=" ml-[1px]" />
+          </button>
+        </div>
+      </div>
+      <div>
         <CheckboxGroup
           options={companies_list.map((option) => ({
             label: (
@@ -57,9 +57,9 @@ const SelectCompany = ({ checkedList, setCheckedList, companies_list }) => {
           value={checkedList.map((item) => item.value)}
           onChange={onChange}
         />
-      </>
+      </div>
     </div>
   );
 };
 
-export default SelectCompany;
+export default ProceedLeadInfo;
