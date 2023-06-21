@@ -1,7 +1,7 @@
 import React from "react";
 
 const LeadInfo = ({ leadInfo }) => {
-  console.log("leadInfo", leadInfo);
+  // console.log("leadInfo", leadInfo);
   if (typeof leadInfo !== "object" || Array.isArray(leadInfo)) {
     return null; // or return an appropriate message or UI for non-object data
   }

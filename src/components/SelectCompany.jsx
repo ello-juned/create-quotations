@@ -41,9 +41,10 @@ const SelectCompany = ({ checkedList, setCheckedList, companies_list }) => {
         </Checkbox>
 
         <CheckboxGroup
-          options={companies_list.map((option) => ({
+        className="w-full"
+        options={companies_list.map((option) => ({
             label: (
-              <div className="w-[180px] flex flex-row text-center items-center ">
+              <div className="w-[200px] flex flex-row text-center items-center ">
                 <img
                   src={option.image}
                   alt={option.label}

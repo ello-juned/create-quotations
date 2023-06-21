@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Checkbox css */
 .ant-checkbox-wrapper {
-  @apply w-full flex flex-row-reverse justify-between items-center  p-2;
+  @apply flex flex-row-reverse !justify-between   p-2 !bg-transparent;
 }
 
 .ant-checkbox {
@@ -18,8 +19,35 @@
 .ant-checkbox-inner {
   @apply !h-4 !w-4  m-auto;
 }
+.ant-checkbox-inner::after {
+}
 
+/* .ant-checkbox-checked::after {
+  @apply  !p-2 !border-transparent !animate-none;
+} */
 
-.ant-checkbox-checked::after {
-  @apply bg-green-300 p-2 border-transparent animate-none;
+/* select & serch css---*/
+.ant-select-show-search {
+  /* @apply bg-white !border-[1px] !border-gray-400 !rounded-md */
+}
+.ant-select-selector {
+  @apply !bg-transparent !border-none !text-current !h-[46px];
+}
+
+.ant-select-selection-search-input {
+  @apply !h-12;
+}
+
+/* .ant-select-selection-item */
+.ant-select-open,
+.ant-select-show-search,
+.ant-select-selection-item {
+  @apply !h-12;
+}
+.ant-select-selector {
+  @apply !pt-[8px];
+}
+
+.ant-select-arrow {
+  @apply !text-white !text-base;
 }

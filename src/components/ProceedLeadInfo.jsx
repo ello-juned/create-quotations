@@ -41,15 +41,16 @@ const ProceedLeadInfo = ({ checkedList, setCheckedList, companies_list }) => {
       </div>
       <div>
         <CheckboxGroup
+        className="w-full"
           options={companies_list.map((option) => ({
             label: (
-              <div className="w-[180px] flex flex-row text-center items-center ">
+              <div className=" flex flex-row text-center items-center  w-[340px]">
                 <img
                   src={option.image}
                   alt={option.label}
-                  className="mt-2 w-20 h-10"
+                  className="mt-2 w-16 h-10"
                 />
-                <span className="ml-2 text-lg">{option.label}</span>
+                <span className="ml-4 text-base">{option.label}</span>
               </div>
             ),
             value: option.value,

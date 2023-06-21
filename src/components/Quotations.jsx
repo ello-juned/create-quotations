@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { InputNumber, Select } from "antd";
-import { FileTwoTone } from "@ant-design/icons";
+import { FileFilled } from "@ant-design/icons";
 
 const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
   const [listCoverage, setListCoverage] = useState([]);
@@ -48,14 +48,14 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
           {/*   FOR LATER USE--- */}
           <div className="flex flex-row mb-1 mt-2">
             <button>Online</button>
-
-            
             <button className="ml-5">Offline</button>
           </div>
         </div>
         <div>
-          <button className="bg-green-300 p-2 flex flex-row justify-center items-center text-center tracking-wider font-light  text-white rounded-md hover:bg-gray-600">
-            PREVIEW <FileTwoTone className="text-2xl ml-2" />
+          <button className="bg-black p-2 w-22 flex flex-row justify-center items-center text-center tracking-wider font-light text-white rounded-md hover:bg-gray-600">
+            <span className="flex items-center">
+              PREVIEW <FileFilled className=" ml-2 " />
+            </span>
           </button>
         </div>
       </div>
@@ -76,7 +76,7 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
               <div>
                 <button
                   onClick={handleCalculatePremium}
-                  className="bg-black rounded-full p-3 tracking-wide text-white  font-light hover:bg-green-300 hover:text-black"
+                  className="bg-sky-400 rounded-full p-4 pt-2 pb-2 tracking-wide text-white  font-light hover:bg-black hover:text-white"
                 >
                   Calculate Premium
                 </button>
@@ -135,14 +135,9 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
 
 export default Quotations;
 
-
-
-
-
 // .ant-checkbox-checked:after {
 //   @apply bg-green-300 p-2 border-transparent animate-none;
 // }
-
 
 // {
 //   "Basic Information": {

@@ -1,8 +1,8 @@
 import React from "react";
 import SelectCompany from "./SelectCompany";
 import Quotations from "./Quotations";
-
 import LeadDetailsHeader from "./LeadDetailsHeader";
+
 const CreateQuotations = ({
   checkedList,
   setCheckedList,
@@ -13,8 +13,7 @@ const CreateQuotations = ({
   return (
     <div className=" flex flex-col gap-4 w-full h-full p-8">
       <LeadDetailsHeader />
-
-      <div className="flex flex-row p-10 gap-5">
+      <div className="flex flex-row gap-8 mt-2">
         <SelectCompany
           checkedList={checkedList}
           setCheckedList={setCheckedList}
