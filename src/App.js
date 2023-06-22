@@ -5,9 +5,11 @@ import ListLeads from "./components/ListLeads";
 import LeadDetails from "./components/LeadDetails";
 import CreateQuotations from "./components/CreateQuotations";
 import { companies_list, inputFields, options } from "../src/fakeData/data";
+import QuotationsPreview from "./components/QuotationsPreview";
 
 function App() {
   const [checkedList, setCheckedList] = useState([]);
+  const [quotation, setQuotation] = useState([]);
   return (
     <>
       {/* Replace this with original Nav component--- */}
@@ -16,7 +18,10 @@ function App() {
       </div>
 
       <Routes>
+        <Route path="*" element={<div>Page Not Found!!!</div>} />
+
         <Route path="/" element={<ListLeads />} />
+
         <Route
           path="/LeadDetails"
           element={
@@ -36,6 +41,25 @@ function App() {
               companies_list={companies_list}
               options={options}
               inputFields={inputFields}
+              quotation={quotation}
+               setQuotation={setQuotation}
+            />
+          }
+        />
+        <Route
+          path="/QuotationsPreview"
+          element={
+            <QuotationsPreview
+              checkedList={checkedList}
+              setCheckedList={setCheckedList}
+              companies_list={companies_list}
+              quotation={quotation}
+              setQuotation={setQuotation}
+              // checkedList={checkedList}
+              // setCheckedList={setCheckedList}
+              // companies_list={companies_list}
+              // options={options}
+              // inputFields={inputFields}
             />
           }
         />

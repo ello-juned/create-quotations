@@ -1,10 +1,20 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { InputNumber, Select } from "antd";
 import { FileFilled } from "@ant-design/icons";
 
-const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
+const Quotations = ({
+  options,
+  inputFields,
+  checkedList,
+  setCheckedList,
+  quotation,
+  setQuotation,
+}) => {
+  console.log("checkedList", checkedList);
   const [listCoverage, setListCoverage] = useState([]);
-  // console.log("checkedList", checkedList);
+  const navigate = useNavigate();
+
   const handleChange = (value, index) => {
     const updatedListCoverage = [...listCoverage];
     updatedListCoverage[index] = value;
@@ -13,18 +23,25 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
 
   // this function will  be trigger after submit the form----
   // please check console for output---
-  const handleCalculatePremium = () => {
+  const handlePreview = () => {
     const premiums = {};
+
     checkedList.forEach((entry_value, index) => {
       const coverageInputs = listCoverage[index] || [];
       const inputs = {};
+
       inputFields.forEach((field) => {
         const value = document.getElementById(
           `${entry_value}-${field.value}`
         ).value;
         inputs[field.label] = value;
       });
-      premiums[entry_value] = {
+
+      if (!premiums[entry_value.label]) {
+        premiums[entry_value.label] = {};
+      }
+
+      premiums[entry_value.label][entry_value.value] = {
         coverage: coverageInputs.reduce((obj, entry, subIndex) => {
           const inputValue = document.getElementById(
             `${entry_value}-${entry}-${subIndex}`
@@ -35,9 +52,37 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
         inputs,
       };
     });
-    // EITHER WE CAN STORE IN A STATE---
-    console.log(premiums);
+    navigate("/QuotationsPreview");
+    setQuotation(premiums);
   };
+
+  // const handlePreview = () => {
+  //   const premiums = {};
+  //   console.log("checkedList-Length",checkedList.length)
+  //   checkedList.forEach((entry_value, index) => {
+  //     const coverageInputs = listCoverage[index] || [];
+  //     const inputs = {};
+  //     inputFields.forEach((field) => {
+  //       const value = document.getElementById(
+  //         `${entry_value}-${field.value}`
+  //       ).value;
+  //       inputs[field.label] = value;
+  //     });
+  //     premiums[entry_value] = {
+  //       coverage: coverageInputs.reduce((obj, entry, subIndex) => {
+  //         const inputValue = document.getElementById(
+  //           `${entry_value}-${entry}-${subIndex}`
+  //         ).value;
+  //         obj[entry] = inputValue;
+  //         return obj;
+  //       }, {}),
+  //       inputs,
+  //     };
+  //   });
+  //   navigate("/QuotationsPreview");
+  //   // EITHER WE CAN STORE IN A STATE---
+  //   console.log(premiums);
+  // };
 
   return (
     <div className="flex flex-col w-full h-full min-h-[400px] bg-white  shadow-xl rounded-lg p-4">
@@ -53,7 +98,7 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
         </div>
         <div>
           <button className="bg-black p-2 w-22 flex flex-row justify-center items-center text-center tracking-wider font-light text-white rounded-md hover:bg-gray-600">
-            <span className="flex items-center">
+            <span className="flex items-center" onClick={handlePreview}>
               PREVIEW <FileFilled className=" ml-2 " />
             </span>
           </button>
@@ -74,10 +119,7 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
                 <h2 className="ml-5">{entry_value?.value}</h2>
               </div>
               <div>
-                <button
-                  onClick={handleCalculatePremium}
-                  className="bg-sky-400 rounded-full p-4 pt-2 pb-2 tracking-wide text-white  font-light hover:bg-black hover:text-white"
-                >
+                <button className="bg-sky-400 rounded-full p-4 pt-2 pb-2 tracking-wide text-white  font-light hover:bg-black hover:text-white">
                   Calculate Premium
                 </button>
               </div>
@@ -88,8 +130,11 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
                 <div className="flex flex-row" key={field.value}>
                   <h2>{field.label} : </h2>
                   <InputNumber
+                    //  formatter={(value) => {
+                    //   return field.label === "NCB" ? `${value} %` : "";
+                    // }}
                     id={`${entry_value}-${field.value}`}
-                    prefix="₹"
+                    prefix={field.label !== "NCB" ? "₹" : "%"}
                     className="w-[100px] ml-5"
                   />
                 </div>
@@ -134,33 +179,3 @@ const Quotations = ({ options, inputFields, checkedList, setCheckedList }) => {
 };
 
 export default Quotations;
-
-// .ant-checkbox-checked:after {
-//   @apply bg-green-300 p-2 border-transparent animate-none;
-// }
-
-// {
-//   "Basic Information": {
-//     "Insurance Category": "John Doe",
-//     "Product Type": "2 Wheeler",
-//     "Insurance Category": "John Doe",
-
-//     "Primary Email Address": "johndoe@example.com",
-//     "Contact Number": "1234567890"
-//     "Presently Insured": "Yes"
-
-//   },
-//   "Insured Information": [
-//     {
-//       "Barnd": "Toyota",
-//       "Model": "Camry",
-//       "Variant": "Petrol",
-//       "Vehicle": "Private",
-//       "Fuel Type": "Petrol",
-//       "Vehicle": "Old",
-//       "Regn No": "Pb659099",
-//       "Manufacture Year": "2022"
-//     }
-//   ],
-//   "Remarks": {"Remark":"I like the product."}
-// }

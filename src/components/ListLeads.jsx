@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 const ListLeads = () => {
   const navigate = useNavigate();
   const handleViewClick = (selectedLead) => {
-    console.log(selectedLead);
     navigate("/LeadDetails",{ state:selectedLead});
   };
 

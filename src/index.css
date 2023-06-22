@@ -8,7 +8,7 @@
 }
 
 .ant-checkbox {
-  @apply h-8 w-8 justify-center text-center  items-center m-auto !p-0 !rounded-xl;
+  @apply h-4 w-10 bg-gray-400 justify-center text-center  items-center m-auto !p-0 !rounded-xl;
 }
 .ant-checkbox-checked {
   @apply bg-green-300 p-2;
@@ -17,9 +17,10 @@
   @apply !opacity-100;
 }
 .ant-checkbox-inner {
-  @apply !h-4 !w-4  m-auto;
+  @apply !h-4 !w-4  m-auto !bg-green-900;
 }
-.ant-checkbox-inner::after {
+.ant-checkbox-inner::after{
+  @apply !bg-green-400  !h-10 !w-10 !transform-none !transition-none !opacity-0
 }
 
 /* .ant-checkbox-checked::after {
@@ -42,12 +43,25 @@
 .ant-select-open,
 .ant-select-show-search,
 .ant-select-selection-item {
-  @apply !h-12;
+  /* @   */
+}
+
+/* .ant-select-selection-item{
+  @apply h-12 !mb-2  !bg-slate-800
+
+} */
+
+.ant-select-selection-item {
+  @apply !m-auto;
 }
 .ant-select-selector {
-  @apply !pt-[8px];
+  /* @apply !pt-[8px]; */
 }
 
 .ant-select-arrow {
   @apply !text-white !text-base;
+}
+
+.ant-select-selection-item {
+  @apply !h-6 !ml-2;
 }

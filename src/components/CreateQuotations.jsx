@@ -9,6 +9,8 @@ const CreateQuotations = ({
   companies_list,
   options,
   inputFields,
+  quotation,
+  setQuotation,
 }) => {
   return (
     <div className=" flex flex-col gap-4 w-full h-full p-8">
@@ -24,6 +26,8 @@ const CreateQuotations = ({
           inputFields={inputFields}
           checkedList={checkedList}
           setCheckedList={setCheckedList}
+          quotation={quotation}
+          setQuotation={setQuotation}
         />
       </div>
     </div>
