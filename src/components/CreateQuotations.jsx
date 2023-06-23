@@ -11,11 +11,15 @@ const CreateQuotations = ({
   inputFields,
   quotation,
   setQuotation,
-  changeCondition
+  changeCondition,
+  condition
 }) => {
   return (
     <div className=" flex flex-col gap-4 w-full h-full p-8">
-      <LeadDetailsHeader />
+      <LeadDetailsHeader
+        changeCondition={changeCondition}
+        condition={condition}
+      />
       <div className="flex flex-row gap-8 mt-2">
         <SelectCompany
           checkedList={checkedList}

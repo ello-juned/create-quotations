@@ -40,7 +40,7 @@ const assignData = [
 ];
 const myArray = ["DRAFTED", "QUOTED", "CONVERTED"];
 
-const LeadDetailsHeader = () => {
+const LeadDetailsHeader = ({ condition, changeCondition }) => {
   const [selectedValue, setSelectedValue] = useState(myArray[0]);
 
   // This function is for changing the background color of select
@@ -48,6 +48,23 @@ const LeadDetailsHeader = () => {
     setSelectedValue(selectedOption);
   };
 
+  // this function is only for back icon---
+  const handleClick = (condition) => {
+    console.log("condition", condition);
+
+    // Invoke the callback function to change the condition
+    if (condition === "leadDetails") {
+      changeCondition("listleads");
+    } else if (condition === "createquotations") {
+      changeCondition("leadDetails");
+    } else if (condition === "quatationpreview") {
+      changeCondition("createquotations");
+    }
+     else {
+      return null;
+      // console.log("condition")
+    }
+  };
   const handleSelectChange = (value) => {
     // console.log("Selected value:", value);
   };
@@ -85,11 +102,16 @@ const LeadDetailsHeader = () => {
   return (
     <div className="flex flex-row justify-between items-center text-justify">
       <div className="flex flex-row justify-center items-center gap-5">
-        <LeftOutlined className="text-2xl mb-5" />
-       <div>
-       <h2 className="text-2xl">Lead Details - 123</h2>
-        <p>sales | Leads | Lead Detail</p>
-       </div>
+        <LeftOutlined
+          className="text-2xl mb-5"
+          onClick={() => handleClick(condition)}
+        />
+        <div>
+          <h2 className="text-2xl">Lead Details - 123</h2>
+          <p>
+            sales | Leads | <span className="text-sky-400">{condition}</span>
+          </p>
+        </div>
       </div>
       <div className="flex flex-row justify-center gap-2">
         <div className="flex flex-row justify-center items-center gap-2">

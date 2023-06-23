@@ -1,7 +1,7 @@
 import React from "react";
 import List_Leads from "../fakeData/Leads.json";
 const ListLeads = ({ changeCondition, setSelectedLead }) => {
-
+  
   const handleClick = (lead) => {
     // Invoke the callback function to change the condition
     changeCondition("leadDetails");
@@ -19,7 +19,6 @@ const ListLeads = ({ changeCondition, setSelectedLead }) => {
               </h2>
               <button
                 className="bg-black w-20  p-1 text-white text-lg hover:bg-red-200 rounded-lg"
-                // onClick={() => handleViewClick(lead)}
                 onClick={() => handleClick(lead)}
               >
                 View

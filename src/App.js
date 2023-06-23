@@ -10,7 +10,6 @@ function App() {
   const [checkedList, setCheckedList] = useState([]);
   const [quotation, setQuotation] = useState([]);
   const [selectedLead, setSelectedLead] = useState([]);
-  
   const [condition, setCondition] = useState("listleads");
   const changeCondition = (newCondition) => {
     setCondition(newCondition);
@@ -19,7 +18,12 @@ function App() {
   const renderConditionally = () => {
     switch (condition) {
       case "listleads":
-        return <ListLeads changeCondition={changeCondition} setSelectedLead={setSelectedLead} />;
+        return (
+          <ListLeads
+            changeCondition={changeCondition}
+            setSelectedLead={setSelectedLead}
+          />
+        );
       case "leadDetails":
         return (
           <LeadDetails
@@ -28,7 +32,7 @@ function App() {
             companies_list={companies_list}
             changeCondition={changeCondition}
             selectedLead={selectedLead}
-            
+            condition={condition}
           />
         );
       case "createquotations":
@@ -41,6 +45,7 @@ function App() {
             inputFields={inputFields}
             quotation={quotation}
             setQuotation={setQuotation}
+            condition={condition}
             changeCondition={changeCondition}
           />
         );
@@ -54,6 +59,7 @@ function App() {
             inputFields={inputFields}
             quotation={quotation}
             setQuotation={setQuotation}
+            condition={condition}
             changeCondition={changeCondition}
           />
         );

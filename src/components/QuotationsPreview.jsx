@@ -17,6 +17,9 @@ const QuotationsPreview = ({
   companies_list,
   quotation,
   setQuotation,
+  changeCondition,
+  condition,
+
 }) => {
   // Current Date---
   function getCurrentDate() {
@@ -47,7 +50,10 @@ const QuotationsPreview = ({
   return (
     <div className=" flex flex-col gap-4 w-full h-full p-8">
       {/* Common  LeadDetailsHeader */}
-      <LeadDetailsHeader />
+      <LeadDetailsHeader
+        condition={condition}
+        changeCondition={changeCondition}
+      />
       {/*  QuotationsPreview Header---*/}
       <div className=" flex flex-col bg-white min-h-[600px] h-full w-[80%] m-auto mt-2  p-5  rounded-xl shadow-lg">
         <div className=" flex flex-row justify-between items-center border-b-2  pt-2 pb-2">
