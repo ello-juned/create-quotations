@@ -18,8 +18,6 @@ function App() {
       </div>
 
       <Routes>
-        <Route path="*" element={<div>Page Not Found!!!</div>} />
-
         <Route path="/" element={<ListLeads />} />
 
         <Route
@@ -42,7 +40,7 @@ function App() {
               options={options}
               inputFields={inputFields}
               quotation={quotation}
-               setQuotation={setQuotation}
+              setQuotation={setQuotation}
             />
           }
         />
