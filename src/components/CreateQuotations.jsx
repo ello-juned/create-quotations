@@ -11,6 +11,7 @@ const CreateQuotations = ({
   inputFields,
   quotation,
   setQuotation,
+  changeCondition
 }) => {
   return (
     <div className=" flex flex-col gap-4 w-full h-full p-8">
@@ -28,6 +29,7 @@ const CreateQuotations = ({
           setCheckedList={setCheckedList}
           quotation={quotation}
           setQuotation={setQuotation}
+          changeCondition={changeCondition}
         />
       </div>
     </div>

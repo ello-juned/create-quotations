@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { InputNumber, Select } from "antd";
 import { FileFilled } from "@ant-design/icons";
 
@@ -10,15 +9,19 @@ const Quotations = ({
   setCheckedList,
   quotation,
   setQuotation,
+  changeCondition,
 }) => {
-  console.log("checkedList", checkedList);
   const [listCoverage, setListCoverage] = useState([]);
-  const navigate = useNavigate();
 
   const handleChange = (value, index) => {
     const updatedListCoverage = [...listCoverage];
     updatedListCoverage[index] = value;
     setListCoverage(updatedListCoverage);
+  };
+
+  const handleClick = () => {
+    // Invoke the callback function to change the condition
+    changeCondition("quatationpreview");
   };
 
   // this function will  be trigger after submit the form----
@@ -52,37 +55,9 @@ const Quotations = ({
         inputs,
       };
     });
-    navigate("/QuotationsPreview");
+    handleClick();
     setQuotation(premiums);
   };
-
-  // const handlePreview = () => {
-  //   const premiums = {};
-  //   console.log("checkedList-Length",checkedList.length)
-  //   checkedList.forEach((entry_value, index) => {
-  //     const coverageInputs = listCoverage[index] || [];
-  //     const inputs = {};
-  //     inputFields.forEach((field) => {
-  //       const value = document.getElementById(
-  //         `${entry_value}-${field.value}`
-  //       ).value;
-  //       inputs[field.label] = value;
-  //     });
-  //     premiums[entry_value] = {
-  //       coverage: coverageInputs.reduce((obj, entry, subIndex) => {
-  //         const inputValue = document.getElementById(
-  //           `${entry_value}-${entry}-${subIndex}`
-  //         ).value;
-  //         obj[entry] = inputValue;
-  //         return obj;
-  //       }, {}),
-  //       inputs,
-  //     };
-  //   });
-  //   navigate("/QuotationsPreview");
-  //   // EITHER WE CAN STORE IN A STATE---
-  //   console.log(premiums);
-  // };
 
   return (
     <div className="flex flex-col w-full h-full min-h-[400px] bg-white  shadow-xl rounded-lg p-4">

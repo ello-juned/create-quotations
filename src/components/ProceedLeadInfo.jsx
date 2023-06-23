@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { Checkbox } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
 
 const CheckboxGroup = Checkbox.Group;
 
-const ProceedLeadInfo = ({ checkedList, setCheckedList, companies_list }) => {
+const ProceedLeadInfo = ({ checkedList, setCheckedList, companies_list,changeCondition }) => {
   const [indeterminate, setIndeterminate] = useState(true);
   const [checkAll, setCheckAll] = useState(false);
-  const navigate = useNavigate();
+
+
+  const handleClick = () => {
+    // Invoke the callback function to change the condition
+    changeCondition("createquotations");
+  }
   // For s single select---
   const onChange = (list) => {
     const selectedObjects = list.map((value) =>
@@ -32,7 +36,7 @@ const ProceedLeadInfo = ({ checkedList, setCheckedList, companies_list }) => {
         </div>
         <div>
           <button
-            onClick={() => navigate("/CreateQuotation")}
+            onClick={() =>handleClick()}
             className="bg-black p-2 flex flex-row justify-center items-center text-center tracking-wider font-light  text-white rounded-md hover:bg-gray-600"
           >
             PROCEED <ArrowRightOutlined className=" ml-[1px]" />

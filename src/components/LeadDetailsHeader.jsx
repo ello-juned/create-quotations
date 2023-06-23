@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Select } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
+import { SearchOutlined, LeftOutlined } from "@ant-design/icons";
 const { Option } = Select;
 const assignData = [
   {
@@ -51,7 +51,7 @@ const LeadDetailsHeader = () => {
   const handleSelectChange = (value) => {
     // console.log("Selected value:", value);
   };
-// Custom render options---
+  // Custom render options---
   const renderOption = (option) => (
     <Option key={option.value} value={option.value} label={option.label}>
       <div className="flex items-center">
@@ -66,9 +66,6 @@ const LeadDetailsHeader = () => {
   );
 
   const renderSelectedOption = (selectedValue, selectedOptions) => {
-    console.log("selectedValue", selectedValue);
-    console.log("selectedOptions", selectedOptions);
-
     const selectedOption = selectedOptions.find(
       (option) => option.value === selectedValue
     );
@@ -87,16 +84,21 @@ const LeadDetailsHeader = () => {
 
   return (
     <div className="flex flex-row justify-between items-center text-justify">
-      <div>
-        <h2 className="text-2xl">Lead Details - 123</h2>
+      <div className="flex flex-row justify-center items-center gap-5">
+        <LeftOutlined className="text-2xl mb-5" />
+       <div>
+       <h2 className="text-2xl">Lead Details - 123</h2>
         <p>sales | Leads | Lead Detail</p>
+       </div>
       </div>
       <div className="flex flex-row justify-center gap-2">
         <div className="flex flex-row justify-center items-center gap-2">
           <h2 className="text-lg">Assign To:</h2>
           <Select
             showSearch
-            suffixIcon={<SearchOutlined className="text-lg text-gray-600 mt-1" />}
+            suffixIcon={
+              <SearchOutlined className="text-lg text-gray-600 mt-1" />
+            }
             defaultValue={assignData[0].value}
             onChange={handleSelectChange}
             optionLabelProp="label"
