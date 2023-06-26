@@ -56,11 +56,11 @@ const QuotationsPreview = ({
       />
       {/*  QuotationsPreview Header---*/}
       <div className="flex flex-col bg-white min-h-[600px] h-full w-[80%] m-auto mt-2  p-5  rounded-xl shadow-custom">
-        <div className="flex flex-row justify-between items-center border-b-2  pt-2 pb-2">
+        <div className="flex flex-row justify-between items-center border-b-[1px] border-grey-40  pt-2 pb-2">
           <div>
-            <h2 className="text-m">Quotation For Motor Insurance</h2>
+            <h2 className="text-m font-light">Quotation For Motor Insurance</h2>
           </div>
-          <div className="flex flex-row gap-5 text-xxl cursor-pointer">
+          <div className="flex flex-row gap-5 text-xl cursor-pointer">
             <FilePdfOutlined />
             <ShareAltOutlined />
             <PrinterOutlined />
@@ -81,7 +81,7 @@ const QuotationsPreview = ({
             <Paragraph editable={{ onChange: setEditableHello }}>
               {editableHello}
             </Paragraph>{" "}
-            <span> Date : {date} </span>
+            <span className="font-light"> Date : {date} </span>
           </div>
           <div className="w-[90%]">
             <Paragraph

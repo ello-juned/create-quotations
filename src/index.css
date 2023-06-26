@@ -38,21 +38,23 @@
 }
 
 .ant-select-selector {
-  @apply !bg-transparent !border-none !h-[46px];
+  @apply !bg-transparent !border-none !h-[42px];
 }
 
 .ant-select-selection-search-input {
-  @apply !h-12;
+  /* @apply !h-14;  */
+  @apply  !border-2 !border-grey-50 !h-full !items-center
 }
 
 .ant-select-selection-item {
-  @apply !m-0 !ml-0 !font-light !text-s  !tracking-wider;
+
+  @apply !m-0 !mr-1 !mb-1 !ml-0 !mt-[6px] !font-light !text-s  !tracking-wider;
 }
 /* css for  select arrow--- */
 .ant-select-arrow {
-  @apply !text-white !text-l;
+  @apply !text-white !text-sm;
 }
 
 .ant-select-selection-item {
-  @apply !h-auto !ml-2;
+  /* @apply  ; */
 }

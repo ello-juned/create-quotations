@@ -65,38 +65,6 @@ const LeadDetailsHeader = ({ condition, changeCondition }) => {
   const handleSelectChange = (value) => {
     console.log("Selected value:", value);
   };
-  // Custom render options---
-  const renderOption = (option) => (
-    // console.log("option", option),
-    <Option key={option.value}>
-      <div className="flex items-center">
-        <img
-          src={option.avatar}
-          alt={option.label}
-          className="mr-2 w-8 h-8 rounded-full"
-        />
-        <span>{option.label}ww</span>
-      </div>
-    </Option>
-  );
-
-  //  cutom selected---
-  const renderSelectedOption = (selectedValue, selectedOptions) => {
-    const selectedOption = selectedOptions.find(
-      (option) => option.value === selectedValue
-    );
-
-    return (
-      <div className="flex items-center">
-        <img
-          src={selectedOption.avatar}
-          alt={selectedOption.label}
-          className="mr-2 w-8 h-8 rounded-full"
-        />
-        <span>{selectedOption.label}aa</span>
-      </div>
-    );
-  };
 
   return (
     <div className="flex flex-row justify-between items-center text-justify">
@@ -118,27 +86,25 @@ const LeadDetailsHeader = ({ condition, changeCondition }) => {
       </div>
       <div className="flex flex-row justify-center gap-2">
         <div className="flex flex-row justify-center items-center gap-2">
-          <h2 className="text-l font-light">Assign To:</h2>
+          <h2 className="text-m font-light">Assign To:</h2>
 
           <Select
             showSearch
             suffixIcon={
               <SearchOutlined className="text-xl text-grey-50 mt-1" />
             }
-            defaultValue={
-              <div className="flex flex-row items-center  bg-primary-60">
-                <Avatar size="default" src={assignData[0]?.avatar} />
-                <p>{assignData[0]?.value}</p>
-              </div>
-            }
             onChange={handleSelectChange}
-            className="w-[200px]  text-3xl font-bold bg-white tracking-wide text-grey rounded-md border-grey-80  border-2"
+            className="w-[200px]  h-full  text-3xl font-bold bg-white tracking-wide text-grey rounded-md border-grey-80  border-2"
           >
             {assignData.map((option) => (
-              <Option key={option.id}>
-                <div className="flex flex-row items-center m-auto mt-2 gap-2">
+              <Option
+                key={option.id}
+                value={option.value}
+                className="flex flex-col"
+              >
+                <div className="flex flex-row items-center m-auto  gap-2">
                   <Avatar size="default" src={option.avatar} />
-                  <p>{option.value}</p>
+                  <p>{option.label}</p>
                 </div>
               </Option>
             ))}
@@ -155,6 +121,7 @@ const LeadDetailsHeader = ({ condition, changeCondition }) => {
             options={myArray.map((entry_) => ({
               label: entry_,
               value: entry_,
+              label2: entry_,
             }))}
             className={`w-[160px] tracking-wider text-white rounded-lg justify-center text-center items-center ${
               selectedValue === "QUOTED"

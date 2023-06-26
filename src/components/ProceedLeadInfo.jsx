@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Checkbox } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
+import ComingSoon from "./ComingSoon";
 
 const CheckboxGroup = Checkbox.Group;
 
@@ -32,10 +33,10 @@ const ProceedLeadInfo = ({
     <div className="flex flex-col h-full w-[700px] min-h-[500px] bg-white  shadow-custom rounded-lg p-4">
       <div className="flex flex-row items-center justify-between border-b-[1px]">
         <div className="">
-          <h2 className="text-xl tracking-wide">Create Quotation</h2>
+          <h2 className="text-l tracking-wide">Create Quotation</h2>
           <div className="flex flex-row mb-1 mt-2">
             <button
-            onClick={()=> setOnlineOfflineBtn(true)}
+              onClick={() => setOnlineOfflineBtn(false)}
               className={`${
                 !onlineOfflineBtn
                   ? "border-b-4 rounded-sm border-primary-90"
@@ -46,11 +47,11 @@ const ProceedLeadInfo = ({
             </button>
             <button
               className={`ml-5 ${
-                onlineOfflineBtn
+                  onlineOfflineBtn
                   ? "border-b-4 rounded-sm border-primary-90"
                   : "text-primary"
               }`}
-              onClick={()=>setOnlineOfflineBtn(false)}
+              onClick={() => setOnlineOfflineBtn(true)}
             >
               Offline
             </button>
@@ -65,26 +66,30 @@ const ProceedLeadInfo = ({
           </button>
         </div>
       </div>
-      <div>
-        <CheckboxGroup
-          className="w-full"
-          options={companies_list.map((option) => ({
-            label: (
-              <div className=" flex flex-row text-center items-center  w-[340px]">
-                <img
-                  src={option.image}
-                  alt={option.label}
-                  className="mt-2 w-16 h-10"
-                />
-                <span className="ml-4 text-base">{option.label}</span>
-              </div>
-            ),
-            value: option.value,
-          }))}
-          value={checkedList.map((item) => item.value)}
-          onChange={onChange}
-        />
-      </div>
+      {onlineOfflineBtn ? (
+        <div>
+          <CheckboxGroup
+            className="w-full"
+            options={companies_list.map((option) => ({
+              label: (
+                <div className=" flex flex-row text-center items-center  w-[340px]">
+                  <img
+                    src={option.image}
+                    alt={option.label}
+                    className="mt-2 w-16 h-10"
+                  />
+                  <span className="ml-4 text-base">{option.label}</span>
+                </div>
+              ),
+              value: option.value,
+            }))}
+            value={checkedList.map((item) => item.value)}
+            onChange={onChange}
+          />
+        </div>
+      ) : (
+        <ComingSoon />
+      )}
     </div>
   );
 };
