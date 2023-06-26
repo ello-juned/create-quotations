@@ -12,7 +12,9 @@ const CreateQuotations = ({
   quotation,
   setQuotation,
   changeCondition,
-  condition
+  condition,
+  onlineOfflineBtn,
+  setOnlineOfflineBtn,
 }) => {
   return (
     <div className=" flex flex-col gap-4 w-full h-full p-8">
@@ -34,6 +36,8 @@ const CreateQuotations = ({
           quotation={quotation}
           setQuotation={setQuotation}
           changeCondition={changeCondition}
+          onlineOfflineBtn={onlineOfflineBtn}
+          setOnlineOfflineBtn={setOnlineOfflineBtn}
         />
       </div>
     </div>

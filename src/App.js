@@ -50,6 +50,8 @@ function App() {
             setQuotation={setQuotation}
             condition={condition}
             changeCondition={changeCondition}
+            onlineOfflineBtn={onlineOfflineBtn}
+            setOnlineOfflineBtn={setOnlineOfflineBtn}
           />
         );
       case "quatationpreview":

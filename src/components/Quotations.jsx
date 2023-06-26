@@ -10,6 +10,8 @@ const Quotations = ({
   quotation,
   setQuotation,
   changeCondition,
+  onlineOfflineBtn,
+  setOnlineOfflineBtn,
 }) => {
   const [listCoverage, setListCoverage] = useState([]);
 
@@ -67,8 +69,26 @@ const Quotations = ({
           <h2 className="text-2xl">Create Quotation</h2>
           {/*   FOR LATER USE--- */}
           <div className="flex flex-row mb-1 mt-2">
-            <button>Online</button>
-            <button className="ml-5">Offline</button>
+            <button
+              onClick={() => setOnlineOfflineBtn(true)}
+              className={`${
+                !onlineOfflineBtn
+                  ? "border-b-4 rounded-sm border-primary-90"
+                  : "text-primary"
+              }`}
+            >
+              Online
+            </button>
+            <button
+              className={`ml-5 ${
+                onlineOfflineBtn
+                  ? "border-b-4 rounded-sm border-primary-90"
+                  : "text-primary"
+              }`}
+              onClick={() => setOnlineOfflineBtn(false)}
+            >
+              Offline
+            </button>
           </div>
         </div>
         <div>
