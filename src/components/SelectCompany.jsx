@@ -29,13 +29,13 @@ const SelectCompany = ({ checkedList, setCheckedList, companies_list }) => {
   };
 
   return (
-    <div className="w-[400px] min-h-[500px] h-full bg-white shadow-xl rounded-xl justify-between  items-center p-2">
+    <div className="w-[400px] min-h-[500px] h-full bg-white shadow-custom rounded-xl justify-between  items-center p-2">
       <>
         <Checkbox
           indeterminate={indeterminate}
           onChange={onCheckAllChange}
           checked={checkAll}
-          className="text-lg border-b-[2px] tracking-wide"
+          className="text-sm border-b-[2px] border-grey-40"
         >
           Selected Companies
         </Checkbox>
@@ -44,7 +44,7 @@ const SelectCompany = ({ checkedList, setCheckedList, companies_list }) => {
         className="w-full  flex flex-row"
         options={companies_list.map((option) => ({
             label: (
-              <div className="w-[200px] flex flex-row text-center items-center">
+              <div className="w-[204px] flex flex-row text-center items-center">
                 <img
                   src={option.image}
                   alt={option.label}

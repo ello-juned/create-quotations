@@ -60,7 +60,7 @@ const Quotations = ({
   };
 
   return (
-    <div className="flex flex-col w-full h-full min-h-[400px] bg-white  shadow-xl rounded-lg p-4">
+    <div className="flex flex-col w-full h-full min-h-[400px] bg-white  shadow-custom rounded-lg p-4">
       {/* HEADER */}
       <div className="flex flex-row items-center justify-between border-b-[1px]">
         <div className="w-[20%]">
@@ -72,7 +72,7 @@ const Quotations = ({
           </div>
         </div>
         <div>
-          <button className="bg-black p-2 w-22 flex flex-row justify-center items-center text-center tracking-wider font-light text-white rounded-md hover:bg-gray-600">
+          <button className="bg-black p-2 w-22 flex flex-row justify-center items-center text-center tracking-wider font-light text-white rounded-md hover:bg-grey-50">
             <span className="flex items-center" onClick={handlePreview}>
               PREVIEW <FileFilled className=" ml-2 " />
             </span>

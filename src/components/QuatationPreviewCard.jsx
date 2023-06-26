@@ -9,7 +9,7 @@ const QuatationPreviewCard = ({ quotation, setQuotation }) => {
         {Object.keys(quotation).map((label) => (
           <div
             key={label}
-            className="border border-gray-300  rounded-md  flex flex-col mt-4"
+            className="border[1px] border-grey-50  rounded-md  flex flex-col mt-4"
           >
             <div className="">
               {Object.keys(quotation[label]).map((value) => (
@@ -68,7 +68,7 @@ const QuatationPreviewCard = ({ quotation, setQuotation }) => {
                   </div>
                   <div className=" flex flex-col justify-between  h-full w-[15%]">
                     <span className="block border-b-2 text-transparent">.</span>
-                    <button className=" mt-4 m-auto   p-2 rounded-lg text-white bg-sky-400 text-sm  w-[100px] ">
+                    <button className=" mt-4 m-auto   p-2 rounded-lg text-white bg-primary-60 text-xxs  w-[100px] ">
                       BUY NOW
                     </button>
                   </div>

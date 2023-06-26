@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Select } from "antd";
+import { Select, Avatar } from "antd";
 import { SearchOutlined, LeftOutlined } from "@ant-design/icons";
 const { Option } = Select;
 const assignData = [
@@ -42,6 +42,7 @@ const myArray = ["DRAFTED", "QUOTED", "CONVERTED"];
 
 const LeadDetailsHeader = ({ condition, changeCondition }) => {
   const [selectedValue, setSelectedValue] = useState(myArray[0]);
+  // console.log("selectedValue", selectedValue);
 
   // This function is for changing the background color of select
   const handleSelectChangeBgColor = (selectedOption) => {
@@ -50,8 +51,6 @@ const LeadDetailsHeader = ({ condition, changeCondition }) => {
 
   // this function is only for back icon---
   const handleClick = (condition) => {
-    console.log("condition", condition);
-
     // Invoke the callback function to change the condition
     if (condition === "leadDetails") {
       changeCondition("listleads");
@@ -59,29 +58,29 @@ const LeadDetailsHeader = ({ condition, changeCondition }) => {
       changeCondition("leadDetails");
     } else if (condition === "quatationpreview") {
       changeCondition("createquotations");
-    }
-     else {
+    } else {
       return null;
-      // console.log("condition")
     }
   };
   const handleSelectChange = (value) => {
-    // console.log("Selected value:", value);
+    console.log("Selected value:", value);
   };
   // Custom render options---
   const renderOption = (option) => (
-    <Option key={option.value} value={option.value} label={option.label}>
+    // console.log("option", option),
+    <Option key={option.value}>
       <div className="flex items-center">
         <img
           src={option.avatar}
           alt={option.label}
           className="mr-2 w-8 h-8 rounded-full"
         />
-        <span>{option.label}</span>
+        <span>{option.label}ww</span>
       </div>
     </Option>
   );
 
+  //  cutom selected---
   const renderSelectedOption = (selectedValue, selectedOptions) => {
     const selectedOption = selectedOptions.find(
       (option) => option.value === selectedValue
@@ -94,7 +93,7 @@ const LeadDetailsHeader = ({ condition, changeCondition }) => {
           alt={selectedOption.label}
           className="mr-2 w-8 h-8 rounded-full"
         />
-        <span>{selectedOption.label}</span>
+        <span>{selectedOption.label}aa</span>
       </div>
     );
   };
@@ -103,40 +102,50 @@ const LeadDetailsHeader = ({ condition, changeCondition }) => {
     <div className="flex flex-row justify-between items-center text-justify">
       <div className="flex flex-row justify-center items-center gap-5">
         <LeftOutlined
-          className="text-2xl mb-5"
+          className="text-l mb-5"
           onClick={() => handleClick(condition)}
         />
         <div>
-          <h2 className="text-2xl">Lead Details - 123</h2>
-          <p>
-            sales | Leads | <span className="text-sky-400">{condition}</span>
+          <h2 className="text-xl font-light">
+            {" "}
+            Lead Details -{" "}
+            <span className="text-xl font-light text-grey-60">123</span>
+          </h2>
+          <p className="tracking-wider">
+            Sales | Leads | <span className="text-primary-60">{condition}</span>
           </p>
         </div>
       </div>
       <div className="flex flex-row justify-center gap-2">
         <div className="flex flex-row justify-center items-center gap-2">
-          <h2 className="text-lg">Assign To:</h2>
+          <h2 className="text-l font-light">Assign To:</h2>
+
           <Select
             showSearch
             suffixIcon={
-              <SearchOutlined className="text-lg text-gray-600 mt-1" />
+              <SearchOutlined className="text-xl text-grey-50 mt-1" />
             }
-            defaultValue={assignData[0].value}
+            defaultValue={
+              <div className="flex flex-row items-center  bg-primary-60">
+                <Avatar size="default" src={assignData[0]?.avatar} />
+                <p>{assignData[0]?.value}</p>
+              </div>
+            }
             onChange={handleSelectChange}
-            optionLabelProp="label"
-            className="w-[200px]  text-4xl font-bold bg-white tracking-wide text-black rounded-md border-gray-400 border"
-            optionRender={(node) => {
-              return <div>{renderOption(node)}</div>;
-            }}
-            valueRender={(selectedValue, selectedOptions) => {
-              return renderSelectedOption(selectedValue, selectedOptions);
-            }}
+            className="w-[200px]  text-3xl font-bold bg-white tracking-wide text-grey rounded-md border-grey-80  border-2"
           >
-            {assignData.map((option) => renderOption(option))}
+            {assignData.map((option) => (
+              <Option key={option.id}>
+                <div className="flex flex-row items-center m-auto mt-2 gap-2">
+                  <Avatar size="default" src={option.avatar} />
+                  <p>{option.value}</p>
+                </div>
+              </Option>
+            ))}
           </Select>
         </div>
 
-        <span className="border-l-[2px] border-gray-300 ml-2 mr-2"></span>
+        <span className="border-l-[1px] border-grey-50 ml-2 mr-2"></span>
         <div className="flex flex-row justify-center items-center gap-2">
           <Select
             defaultValue={myArray[0]}
@@ -147,12 +156,12 @@ const LeadDetailsHeader = ({ condition, changeCondition }) => {
               label: entry_,
               value: entry_,
             }))}
-            className={`w-[160px] tracking-wider text-white rounded-lg ${
+            className={`w-[160px] tracking-wider text-white rounded-lg justify-center text-center items-center ${
               selectedValue === "QUOTED"
-                ? "bg-yellow-400"
+                ? "bg-yellow"
                 : selectedValue === "DRAFTED"
-                ? "bg-gray-600"
-                : "bg-green-700"
+                ? "bg-grey-50"
+                : "bg-green-90"
             }`}
           />
         </div>

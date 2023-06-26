@@ -17,7 +17,7 @@
   @apply border-none;
 }
 .ant-checkbox .ant-checkbox-inner {
-  @apply !bg-gray-400 !h-7 !w-7 !rounded-md;
+  @apply !bg-grey-50 !h-7 !w-7 !rounded-md;
 }
 .ant-checkbox .ant-checkbox-inner:after {
   @apply !h-4 !w-2 !bg-transparent;
@@ -27,50 +27,32 @@
 }
 
 .ant-checkbox-checked .ant-checkbox-inner {
-  @apply !bg-green-300 p-2;
+  @apply !bg-green-70 p-2;
 }
 .ant-checkbox-inner {
-  @apply m-auto !bg-green-900;
+  @apply m-auto !bg-green-70;
 }
 
 .ant-checkbox:not(.ant-checkbox-disabled):hover .ant-checkbox-inner {
-  @apply !border-none
+  @apply !border-none;
 }
-/* select & serch css---*/
-.ant-select-show-search {
-  /* @apply bg-white !border-[1px] !border-gray-400 !rounded-md */
-}
+
 .ant-select-selector {
-  @apply !bg-transparent !border-none !text-current !h-[46px];
+  @apply !bg-transparent !border-none !h-[46px];
 }
 
 .ant-select-selection-search-input {
   @apply !h-12;
 }
 
-/* .ant-select-selection-item */
-.ant-select-open,
-.ant-select-show-search,
 .ant-select-selection-item {
-  /* @   */
+  @apply !m-0 !ml-0 !font-light !text-s  !tracking-wider;
 }
-
-/* .ant-select-selection-item{
-  @apply h-12 !mb-2  !bg-slate-800
-
-} */
-
-.ant-select-selection-item {
-  @apply !m-auto;
-}
-.ant-select-selector {
-  /* @apply !pt-[8px]; */
-}
-
+/* css for  select arrow--- */
 .ant-select-arrow {
-  @apply !text-white !text-base;
+  @apply !text-white !text-l;
 }
 
 .ant-select-selection-item {
-  @apply !h-6 !ml-2;
+  @apply !h-auto !ml-2;
 }

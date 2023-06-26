@@ -11,6 +11,7 @@ function App() {
   const [quotation, setQuotation] = useState([]);
   const [selectedLead, setSelectedLead] = useState([]);
   const [condition, setCondition] = useState("listleads");
+  const [onlineOfflineBtn, setOnlineOfflineBtn] = useState(false);
   const changeCondition = (newCondition) => {
     setCondition(newCondition);
   };
@@ -33,6 +34,8 @@ function App() {
             changeCondition={changeCondition}
             selectedLead={selectedLead}
             condition={condition}
+            onlineOfflineBtn={onlineOfflineBtn}
+            setOnlineOfflineBtn={setOnlineOfflineBtn}
           />
         );
       case "createquotations":
@@ -71,7 +74,7 @@ function App() {
   return (
     <>
       {/* Replace this with original Nav component--- */}
-      <div className="bg-white h-[100px] w-full text-center items-center justify-center text-lg shadow-md">
+      <div className="bg-white h-[100px] w-full text-center items-center justify-center text-lg shadow-custom ">
         Replace with Main Navbar---
       </div>
       {renderConditionally()}

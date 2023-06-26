@@ -55,12 +55,12 @@ const QuotationsPreview = ({
         changeCondition={changeCondition}
       />
       {/*  QuotationsPreview Header---*/}
-      <div className=" flex flex-col bg-white min-h-[600px] h-full w-[80%] m-auto mt-2  p-5  rounded-xl shadow-lg">
-        <div className=" flex flex-row justify-between items-center border-b-2  pt-2 pb-2">
+      <div className="flex flex-col bg-white min-h-[600px] h-full w-[80%] m-auto mt-2  p-5  rounded-xl shadow-custom">
+        <div className="flex flex-row justify-between items-center border-b-2  pt-2 pb-2">
           <div>
-            <h2 className="text-lg">Quotation For Motor Insurance</h2>
+            <h2 className="text-m">Quotation For Motor Insurance</h2>
           </div>
-          <div className="flex flex-row gap-5 text-2xl cursor-pointer">
+          <div className="flex flex-row gap-5 text-xxl cursor-pointer">
             <FilePdfOutlined />
             <ShareAltOutlined />
             <PrinterOutlined />
